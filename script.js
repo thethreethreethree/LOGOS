@@ -68,9 +68,13 @@ document.getElementById('quiz-form').addEventListener('submit', function(event) 
     }
 });
 
-// Function to display the result based on the total score
+// Function to display the result based on the final question answered
 function displayResult() {
+    const questionContainer = document.getElementById('question-container');
     const resultDiv = document.getElementById('result');
+
+    // Remove question boxes
+    questionContainer.innerHTML = '';
 
     // Polite denial or warm welcome based on final question answered
     if (currentQuestionIndex === questions.length) {
