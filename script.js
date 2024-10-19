@@ -1,34 +1,14 @@
 const questions = [
-    {
-        question: "When someone asks for help, I feel motivated to assist them."
-    },
-    {
-        question: "I enjoy meeting new people and learning about their experiences."
-    },
-    {
-        question: "I am open to participating in group activities and events."
-    },
-    {
-        question: "I try to stay positive and encourage others, even when times are tough."
-    },
-    {
-        question: "I believe that small acts of kindness can make a big difference."
-    },
-    {
-        question: "I am willing to share my thoughts and ideas with others in a friendly way."
-    },
-    {
-        question: "I find joy in making others smile or laugh."
-    },
-    {
-        question: "I value collaboration and teamwork in achieving common goals."
-    },
-    {
-        question: "I feel comfortable approaching someone I don’t know to start a conversation."
-    },
-    {
-        question: "I believe in supporting causes that help the community."
-    }
+    { question: "When someone asks for help, I feel motivated to assist them." },
+    { question: "I enjoy meeting new people and learning about their experiences." },
+    { question: "I am open to participating in group activities and events." },
+    { question: "I try to stay positive and encourage others, even when times are tough." },
+    { question: "I believe that small acts of kindness can make a big difference." },
+    { question: "I am willing to share my thoughts and ideas with others in a friendly way." },
+    { question: "I find joy in making others smile or laugh." },
+    { question: "I value collaboration and teamwork in achieving common goals." },
+    { question: "I feel comfortable approaching someone I don’t know to start a conversation." },
+    { question: "I believe in supporting causes that help the community." }
 ];
 
 let currentQuestionIndex = 0;
@@ -40,9 +20,7 @@ function displayIntro() {
         <button id="start-quiz" class="start-btn">Start the Test</button>
     `;
 
-    // Add event listener to start button
     document.getElementById('start-quiz').addEventListener('click', function() {
-        // Hide the intro and show the first question
         introContainer.style.display = 'none';
         displayQuestion(currentQuestionIndex);
     });
@@ -63,43 +41,46 @@ function displayQuestion(index) {
     const ratingInput = document.getElementById('rating');
     const ratingValue = document.getElementById('rating-value');
 
-    // Update the displayed value when the slider is moved
     ratingInput.addEventListener('input', function() {
         ratingValue.textContent = ratingInput.value;
     });
 }
 
-// Handle form submission
 document.getElementById('quiz-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from reloading
+    event.preventDefault();
 
     currentQuestionIndex++;
 
-    // Check if there are more questions
     if (currentQuestionIndex < questions.length) {
         displayQuestion(currentQuestionIndex);
     } else {
-        displayResult(); // Display the final result
+        displayResult();
     }
 });
 
-// Function to display the result based on the final question answered
 function displayResult() {
     const questionContainer = document.getElementById('question-container');
     const resultDiv = document.getElementById('result');
-
-    // Remove question boxes
     questionContainer.innerHTML = '';
 
-    // Polite denial or warm welcome based on final question answered
-    const randomChoice = Math.random() > 0.5; // You can replace this with actual logic based on answers
+    const randomChoice = Math.random() > 0.5;
 
     if (randomChoice) {
-        resultDiv.innerHTML = `<h2>Welcome! 🎉</h2><p>You're a great fit for our event! We're excited to have you join us! <a href="https://www.google.com">Buy your ticket here</a>.</p>`;
+        resultDiv.innerHTML = `
+            <h2>Welcome! 🎉</h2>
+            <p>You're a great fit for our event! We're excited to have you join us!</p>
+            <button class="join-btn" id="join-btn">Join Us!</button>
+        `;
+
+        document.getElementById('join-btn').addEventListener('click', function() {
+            window.location.href = 'https://www.google.com'; // Placeholder link for ticket purchase
+        });
     } else {
-        resultDiv.innerHTML = `<h2>Thank you for participating! 😔</h2><p>We appreciate your effort in taking the test, but it seems like you may not be the best fit for this event. We hope you have a wonderful day!</p>`;
+        resultDiv.innerHTML = `
+            <h2>Thank you for participating! 😔</h2>
+            <p>We appreciate your effort in taking the test, but it seems like you may not be the best fit for this event. We hope you have a wonderful day!</p>
+        `;
     }
 }
 
-// Display the introduction when the page loads
 displayIntro();
