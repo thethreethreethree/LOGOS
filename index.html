@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Event Test</title>
+    <title>Charity Event Compatibility Test</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="quiz-container">
-        <div id="intro-container"></div>
-        <form id="quiz-form">
-            <div id="question-container"></div>
-            <div id="result"></div>
-        </form>
+    <div class="container">
+        <h1>Welcome to the Charity Event Compatibility Test!</h1>
+        <div id="intro" class="message">
+            <p>🌟 To create a truly memorable experience for everyone, we want to ensure that participants share a similar vibe. This fun test will help us find out if you're a great fit! Ready to get started?</p>
+        </div>
+        <div id="quiz" class="quiz hidden">
+            <form id="testForm">
+                <div id="questions"></div>
+                <button type="button" id="submitButton">Submit</button>
+            </form>
+        </div>
+        <div id="result" class="hidden">
+            <p id="resultMessage"></p>
+            <button id="restartButton" class="hidden">Take the Test Again</button>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
