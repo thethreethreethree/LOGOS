@@ -2,6 +2,7 @@ body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-image: url('images/background.png'); /* Add your background image here */
     background-size: cover;
+    background-position: center; /* Center the background */
     color: #333;
     margin: 0;
     padding: 20px;
@@ -89,4 +90,24 @@ button:hover {
 
 #result h2 {
     margin-bottom: 10px;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
 }
