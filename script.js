@@ -64,7 +64,7 @@ document.getElementById('quiz-form').addEventListener('submit', function(event) 
     if (currentQuestionIndex < questions.length) {
         displayQuestion(currentQuestionIndex);
     } else {
-        displayResult(); // Display the final result
+        displayResult(); // Display the final result and remove questions
     }
 });
 
@@ -73,14 +73,16 @@ function displayResult() {
     const questionContainer = document.getElementById('question-container');
     const resultDiv = document.getElementById('result');
 
-    // Remove question boxes
-    questionContainer.innerHTML = '';
+    // Remove the question container
+    questionContainer.innerHTML = ''; // Clear all questions
 
-    // Polite denial or warm welcome based on final question answered
-    if (currentQuestionIndex === questions.length) {
-        resultDiv.innerHTML = `<h2>Thank you for participating! 😔</h2><p>We appreciate your effort in taking the test, but it seems like you may not be the best fit for this event. We hope you have a wonderful day!</p>`;
-    } else {
+    // Display a polite or welcoming message
+    const randomChoice = Math.random() > 0.5; // You can replace this with actual logic based on answers
+
+    if (randomChoice) {
         resultDiv.innerHTML = `<h2>Welcome! 🎉</h2><p>You're a great fit for our event! We're excited to have you join us! <a href="https://www.google.com">Buy your ticket here</a>.</p>`;
+    } else {
+        resultDiv.innerHTML = `<h2>Thank you for participating! 😔</h2><p>We appreciate your effort in taking the test, but it seems like you may not be the best fit for this event. We hope you have a wonderful day!</p>`;
     }
 }
 
