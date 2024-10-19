@@ -1,53 +1,67 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('background.png'); /* Ensure this file is correctly placed */
+    font-family: Arial, sans-serif;
+    background-image: url('images/background.png');
     background-size: cover;
     background-position: center;
-    font-family: 'Arial', sans-serif;
+    color: #333;
 }
 
-.quiz-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    padding: 20px;
-    width: 100%;
+.container {
+    width: 90%;
     max-width: 600px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
 }
 
-h2 {
-    color: #4CAF50;
+.message {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.start-btn, .join-btn {
+.hidden {
+    display: none;
+}
+
+.quiz {
+    margin-bottom: 20px;
+}
+
+.slider {
+    width: 100%;
+    margin: 10px 0;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
+    font-size: 16px;
 }
 
-.start-btn:hover, .join-btn:hover {
+button:hover {
     background-color: #45a049;
 }
 
-@media (max-width: 600px) {
-    .quiz-container {
-        width: 90%;
-    }
+.resultMessage {
+    text-align: center;
+    font-size: 1.2em;
 }
-
