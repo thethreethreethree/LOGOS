@@ -10,97 +10,9 @@
     <div class="container">
         <h1>Are You a Kind and Friendly Person?</h1>
         <form id="quiz-form">
-            <!-- Question 1 -->
-            <div class="question">
-                <p>1. How do you react when a stranger asks you for directions?</p>
-                <label><input type="radio" name="q1" value="3"> I stop what I’m doing and help them immediately.</label><br>
-                <label><input type="radio" name="q1" value="2"> I help them, but only if I’m not in a rush.</label><br>
-                <label><input type="radio" name="q1" value="1"> I point them in the general direction but don’t spend much time.</label><br>
-                <label><input type="radio" name="q1" value="0"> I usually avoid interacting with strangers.</label>
+            <div id="question-container">
+                <!-- The questions will be injected here by JavaScript -->
             </div>
-
-            <!-- Question 2 -->
-            <div class="question">
-                <p>2. If a friend makes a mistake that impacts you, what do you do?</p>
-                <label><input type="radio" name="q2" value="3"> I forgive them and help them fix the situation.</label><br>
-                <label><input type="radio" name="q2" value="2"> I forgive them, but let them handle the consequences.</label><br>
-                <label><input type="radio" name="q2" value="1"> I forgive them, but hold a small grudge.</label><br>
-                <label><input type="radio" name="q2" value="0"> I get upset and let them know how I feel.</label>
-            </div>
-
-            <!-- Question 3 -->
-            <div class="question">
-                <p>3. When someone shares a personal problem with you, how do you respond?</p>
-                <label><input type="radio" name="q3" value="3"> I actively listen and offer emotional support.</label><br>
-                <label><input type="radio" name="q3" value="2"> I listen and give practical advice.</label><br>
-                <label><input type="radio" name="q3" value="1"> I listen briefly, but don’t get too involved.</label><br>
-                <label><input type="radio" name="q3" value="0"> I try to avoid conversations about personal problems.</label>
-            </div>
-
-            <!-- Question 4 -->
-            <div class="question">
-                <p>4. How do you handle disagreements with friends or family?</p>
-                <label><input type="radio" name="q4" value="3"> I calmly discuss and resolve the issue.</label><br>
-                <label><input type="radio" name="q4" value="2"> I try to compromise and avoid conflict.</label><br>
-                <label><input type="radio" name="q4" value="1"> I sometimes raise my voice but try to resolve it later.</label><br>
-                <label><input type="radio" name="q4" value="0"> I often argue and find it hard to forgive.</label>
-            </div>
-
-            <!-- Question 5 -->
-            <div class="question">
-                <p>5. How do you react when you see someone struggling with a task in public?</p>
-                <label><input type="radio" name="q5" value="3"> I offer help immediately, even if I don’t know them.</label><br>
-                <label><input type="radio" name="q5" value="2"> I offer help if I feel it’s appropriate.</label><br>
-                <label><input type="radio" name="q5" value="1"> I wait for someone else to help.</label><br>
-                <label><input type="radio" name="q5" value="0"> I ignore the situation and continue with my day.</label>
-            </div>
-
-            <!-- Question 6 -->
-            <div class="question">
-                <p>6. When working in a team, how do you approach cooperation?</p>
-                <label><input type="radio" name="q6" value="3"> I take on extra work if needed and support my teammates.</label><br>
-                <label><input type="radio" name="q6" value="2"> I do my part and help when asked.</label><br>
-                <label><input type="radio" name="q6" value="1"> I do my part, but don’t go beyond it.</label><br>
-                <label><input type="radio" name="q6" value="0"> I focus on my own tasks and avoid getting involved in others' work.</label>
-            </div>
-
-            <!-- Question 7 -->
-            <div class="question">
-                <p>7. How do you feel about random acts of kindness, such as paying for someone’s coffee?</p>
-                <label><input type="radio" name="q7" value="3"> I love doing small acts of kindness whenever possible.</label><br>
-                <label><input type="radio" name="q7" value="2"> I enjoy it occasionally, if the opportunity arises.</label><br>
-                <label><input type="radio" name="q7" value="1"> I think it’s nice but rarely go out of my way to do it.</label><br>
-                <label><input type="radio" name="q7" value="0"> I don’t see the point in doing random acts of kindness.</label>
-            </div>
-
-            <!-- Question 8 -->
-            <div class="question">
-                <p>8. What’s your reaction when you see someone being treated unfairly?</p>
-                <label><input type="radio" name="q8" value="3"> I speak up and stand up for them.</label><br>
-                <label><input type="radio" name="q8" value="2"> I sympathize, but don’t always get involved.</label><br>
-                <label><input type="radio" name="q8" value="1"> I feel bad but prefer not to interfere.</label><br>
-                <label><input type="radio" name="q8" value="0"> I tend to ignore situations that don’t involve me.</label>
-            </div>
-
-            <!-- Question 9 -->
-            <div class="question">
-                <p>9. If you’re in a bad mood, how do you treat others around you?</p>
-                <label><input type="radio" name="q9" value="3"> I make an effort to be kind despite how I feel.</label><br>
-                <label><input type="radio" name="q9" value="2"> I try to be polite, but it’s harder for me.</label><br>
-                <label><input type="radio" name="q9" value="1"> I can be short with others, but don’t mean to be.</label><br>
-                <label><input type="radio" name="q9" value="0"> I often let my mood affect my interactions negatively.</label>
-            </div>
-
-            <!-- Question 10 -->
-            <div class="question">
-                <p>10. How do you feel about volunteering for a good cause?</p>
-                <label><input type="radio" name="q10" value="3"> I actively seek out volunteer opportunities.</label><br>
-                <label><input type="radio" name="q10" value="2"> I participate when I can, but don’t go out of my way to find them.</label><br>
-                <label><input type="radio" name="q10" value="1"> I volunteer if asked, but don’t usually initiate.</label><br>
-                <label><input type="radio" name="q10" value="0"> I rarely volunteer for anything.</label>
-            </div>
-
-            <!-- Submit button -->
             <button type="submit">Submit</button>
         </form>
         <div id="result"></div>
