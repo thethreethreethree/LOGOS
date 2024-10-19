@@ -1,33 +1,33 @@
 const questions = [
     {
-        question: "🌍 How do you react when a stranger asks you for directions?",
+        question: "When someone asks for help, I feel motivated to assist them."
     },
     {
-        question: "🤷 If a friend makes a mistake that affects you, what’s your move?",
+        question: "I enjoy meeting new people and learning about their experiences."
     },
     {
-        question: "🗣️ When someone shares a personal problem, how do you respond?",
+        question: "I am open to participating in group activities and events."
     },
     {
-        question: "🗨️ How do you handle disagreements with friends?",
+        question: "I try to stay positive and encourage others, even when times are tough."
     },
     {
-        question: "👀 How do you feel when you see someone struggling in public?",
+        question: "I believe that small acts of kindness can make a big difference."
     },
     {
-        question: "👥 When working in a team, how do you contribute?",
+        question: "I am willing to share my thoughts and ideas with others in a friendly way."
     },
     {
-        question: "💖 How do you feel about random acts of kindness?",
+        question: "I find joy in making others smile or laugh."
     },
     {
-        question: "🛡️ What’s your reaction to seeing someone treated unfairly?",
+        question: "I value collaboration and teamwork in achieving common goals."
     },
     {
-        question: "😠 If you’re having a bad day, how do you treat others?",
+        question: "I feel comfortable approaching someone I don’t know to start a conversation."
     },
     {
-        question: "💪 How do you feel about volunteering for a cause?",
+        question: "I believe in supporting causes that help the community."
     }
 ];
 
@@ -77,9 +77,9 @@ function displayResult(score) {
 
     const maxScore = questions.length * 4; // Maximum possible score
     if (score >= (maxScore * 0.8)) {
-        resultDiv.innerHTML = `<h2>Yes! You're a very kind and friendly person. 🎉</h2><p>You scored ${score} out of ${maxScore}. You're invited to the charity party! <a href="https://www.google.com">Buy your ticket here</a>.</p>`;
+        resultDiv.innerHTML = `<h2>Yes! You're a great fit for our event! 🎉</h2><p>You scored ${score} out of ${maxScore}. You're invited to the charity party! <a href="https://www.google.com">Buy your ticket here</a>.</p>`;
     } else {
-        resultDiv.innerHTML = `<h2>Sorry, you're not a perfect match for this event. 😔</h2><p>You scored ${score} out of ${maxScore}. Thank you for taking the test.</p>`;
+        resultDiv.innerHTML = `<h2>Thank you for your interest! 😔</h2><p>You scored ${score} out of ${maxScore}. We appreciate your effort in taking the test.</p>`;
     }
 }
 
