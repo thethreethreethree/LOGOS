@@ -75,3 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// Result logic
+if (averageScore >= 7) {
+    resultMessage.innerHTML = "🎉 You're warmly welcomed to join our charity event!";
+    document.getElementById('ticketButton').classList.remove('hidden'); // Show the ticket button
+} else {
+    resultMessage.innerHTML = "😔 Unfortunately, our event might not provide you with the best experience.";
+    document.getElementById('ticketButton').classList.add('hidden'); // Hide the ticket button
+}
+
