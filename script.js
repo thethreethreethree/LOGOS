@@ -61,7 +61,7 @@ document.getElementById('quiz-form').addEventListener('submit', function(event) 
 function displayResult() {
     const questionContainer = document.getElementById('question-container');
     const resultDiv = document.getElementById('result');
-    questionContainer.innerHTML = '';
+    questionContainer.innerHTML = ''; // Remove all question boxes after the last question
 
     const randomChoice = Math.random() > 0.5;
 
@@ -73,7 +73,7 @@ function displayResult() {
         `;
 
         document.getElementById('join-btn').addEventListener('click', function() {
-            window.location.href = 'https://www.google.com'; // Placeholder link for ticket purchase
+            window.location.href = 'https://www.google.com'; // Placeholder for ticket purchase link
         });
     } else {
         resultDiv.innerHTML = `
