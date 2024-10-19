@@ -134,4 +134,13 @@ document.getElementById('quiz-form').addEventListener('submit', function(event) 
 function displayResult(score) {
     const resultDiv = document.getElementById('result');
 
-    const maxScore = questions.length * 3; //
+    const maxScore = questions.length * 3; // Maximum possible score
+    if (score >= (maxScore * 0.8)) {
+        resultDiv.innerHTML = `<h2>Yes! You're a very kind and friendly person. 🎉</h2><p>You scored ${score} out of ${maxScore}. You're invited to the charity party! <a href="https://www.google.com">Buy your ticket here</a>.</p>`;
+    } else {
+        resultDiv.innerHTML = `<h2>Sorry, you're not a perfect match for this event. 😔</h2><p>You scored ${score} out of ${maxScore}. Thank you for taking the test.</p>`;
+    }
+}
+
+// Display the first question when the page loads
+displayQuestion(currentQuestionIndex);
