@@ -1,113 +1,50 @@
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-image: url('images/background.png'); /* Add your background image here */
+    font-family: Arial, sans-serif;
+    background-image: url('background.png');
     background-size: cover;
-    background-position: center; /* Center the background */
+    background-position: center;
     color: #333;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
-.container {
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    padding: 30px;
-    max-width: 500px;
-    margin: auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+#intro-container, #question-container, #result {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
     text-align: center;
 }
 
-h1 {
-    font-size: 24px;
-    color: #4CAF50;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.question {
-    margin-bottom: 20px;
-}
-
-input[type="range"] {
-    -webkit-appearance: none; /* Hides the default slider */
-    width: 100%;
-    height: 6px; /* Height of the slider */
-    border-radius: 5px;
-    background: #ddd; /* Background color of the slider */
-    outline: none; /* Removes the default outline */
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Hides the default slider thumb */
-    appearance: none; /* Hides the default slider thumb */
-    width: 20px; /* Width of the thumb */
-    height: 20px; /* Height of the thumb */
-    border-radius: 50%;
-    background: #4CAF50; /* Thumb color */
-    cursor: pointer; /* Cursor style when hovering */
-}
-
-input[type="range"]::-moz-range-thumb {
-    width: 20px; /* Width of the thumb */
-    height: 20px; /* Height of the thumb */
-    border-radius: 50%;
-    background: #4CAF50; /* Thumb color */
-    cursor: pointer; /* Cursor style when hovering */
-}
-
-button {
-    display: block;
-    width: 100%;
-    padding: 12px;
+.start-btn, .join-btn {
     background-color: #4CAF50;
     color: white;
     border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-button:hover {
+.start-btn:hover, .join-btn:hover {
     background-color: #45a049;
 }
 
-#result {
-    margin-top: 20px;
-    text-align: center;
+input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+p {
     font-size: 18px;
-}
-
-#result h2 {
-    margin-bottom: 10px;
-}
-
-/* Mobile Styles */
-@media (max-width: 600px) {
-    .container {
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-
-    p {
-        font-size: 14px;
-    }
-
-    button {
-        padding: 10px;
-        font-size: 14px;
-    }
 }
