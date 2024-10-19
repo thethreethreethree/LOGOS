@@ -1,24 +1,36 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     background-image: url('images/background.png'); /* Add your background image here */
     background-size: cover;
     color: #333;
     margin: 0;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     border-radius: 10px;
-    padding: 20px;
-    max-width: 600px;
+    padding: 30px;
+    max-width: 500px;
     margin: auto;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
+    font-size: 24px;
     color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
 
 .question {
@@ -26,19 +38,43 @@ h1 {
 }
 
 input[type="range"] {
+    -webkit-appearance: none; /* Hides the default slider */
     width: 100%;
-    margin: 20px 0;
+    height: 6px; /* Height of the slider */
+    border-radius: 5px;
+    background: #ddd; /* Background color of the slider */
+    outline: none; /* Removes the default outline */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Hides the default slider thumb */
+    appearance: none; /* Hides the default slider thumb */
+    width: 20px; /* Width of the thumb */
+    height: 20px; /* Height of the thumb */
+    border-radius: 50%;
+    background: #4CAF50; /* Thumb color */
+    cursor: pointer; /* Cursor style when hovering */
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px; /* Width of the thumb */
+    height: 20px; /* Height of the thumb */
+    border-radius: 50%;
+    background: #4CAF50; /* Thumb color */
+    cursor: pointer; /* Cursor style when hovering */
 }
 
 button {
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
@@ -48,4 +84,9 @@ button:hover {
 #result {
     margin-top: 20px;
     text-align: center;
+    font-size: 18px;
+}
+
+#result h2 {
+    margin-bottom: 10px;
 }
