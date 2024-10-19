@@ -59,28 +59,4 @@ document.getElementById('quiz-form').addEventListener('submit', function(event) 
 });
 
 function displayResult() {
-    const questionContainer = document.getElementById('question-container');
-    const resultDiv = document.getElementById('result');
-    questionContainer.innerHTML = ''; // Remove all questions after the last one is completed
-
-    const randomChoice = Math.random() > 0.5; // Simulated outcome (replace with real scoring logic)
-
-    if (randomChoice) {
-        resultDiv.innerHTML = `
-            <h2>Welcome! 🎉</h2>
-            <p>You're a great fit for our event! We're excited to have you join us!</p>
-            <button class="join-btn" id="join-btn">Join Us!</button>
-        `;
-
-        document.getElementById('join-btn').addEventListener('click', function() {
-            window.location.href = 'https://www.google.com'; // Placeholder for the real ticket purchase link
-        });
-    } else {
-        resultDiv.innerHTML = `
-            <h2>Thank you for participating! 😔</h2>
-            <p>We appreciate your effort in taking the test, but it seems like you may not be the best fit for this event. We hope you have a wonderful day!</p>
-        `;
-    }
-}
-
-displayIntro();
+    const questionContainer = document.getElementById('question-container
