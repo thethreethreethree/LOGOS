@@ -37,7 +37,15 @@ function displayQuestion(index) {
     const questionContainer = document.getElementById('question-container');
     const question = questions[index];
 
+    let introText = '';
+    
+    // Display the introduction text only for the first question
+    if (index === 0) {
+        introText = `<p>🌟 To create a truly memorable experience for everyone, we want to ensure that participants share a similar vibe. This fun test will help us find out if you're a great fit! Ready to get started!</p>`;
+    }
+
     questionContainer.innerHTML = `
+        ${introText}
         <div class="question">
             <p>${question.question}</p>
             <input type="range" id="rating" min="0" max="4" step="1" value="0">
@@ -64,7 +72,7 @@ document.getElementById('quiz-form').addEventListener('submit', function(event) 
     if (currentQuestionIndex < questions.length) {
         displayQuestion(currentQuestionIndex);
     } else {
-        displayResult(); // Display the final result and remove questions
+        displayResult(); // Display the final result
     }
 });
 
@@ -73,10 +81,10 @@ function displayResult() {
     const questionContainer = document.getElementById('question-container');
     const resultDiv = document.getElementById('result');
 
-    // Remove the question container
-    questionContainer.innerHTML = ''; // Clear all questions
+    // Remove question boxes
+    questionContainer.innerHTML = '';
 
-    // Display a polite or welcoming message
+    // Polite denial or warm welcome based on final question answered
     const randomChoice = Math.random() > 0.5; // You can replace this with actual logic based on answers
 
     if (randomChoice) {
