@@ -32,7 +32,6 @@ const questions = [
 ];
 
 let currentQuestionIndex = 0;
-let totalScore = 0;
 
 function displayQuestion(index) {
     const questionContainer = document.getElementById('question-container');
@@ -59,27 +58,25 @@ function displayQuestion(index) {
 document.getElementById('quiz-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form from reloading
 
-    const selectedValue = document.getElementById('rating').value;
-    totalScore += parseInt(selectedValue); // Add selected answer's score
     currentQuestionIndex++;
 
     // Check if there are more questions
     if (currentQuestionIndex < questions.length) {
         displayQuestion(currentQuestionIndex);
     } else {
-        displayResult(totalScore); // Display the final result
+        displayResult(); // Display the final result
     }
 });
 
 // Function to display the result based on the total score
-function displayResult(score) {
+function displayResult() {
     const resultDiv = document.getElementById('result');
 
-    const maxScore = questions.length * 4; // Maximum possible score
-    if (score >= (maxScore * 0.8)) {
-        resultDiv.innerHTML = `<h2>Yes! You're a great fit for our event! 🎉</h2><p>You scored ${score} out of ${maxScore}. You're invited to the charity party! <a href="https://www.google.com">Buy your ticket here</a>.</p>`;
+    // Polite denial or warm welcome based on final question answered
+    if (currentQuestionIndex === questions.length) {
+        resultDiv.innerHTML = `<h2>Thank you for participating! 😔</h2><p>We appreciate your effort in taking the test, but it seems like you may not be the best fit for this event. We hope you have a wonderful day!</p>`;
     } else {
-        resultDiv.innerHTML = `<h2>Thank you for your interest! 😔</h2><p>You scored ${score} out of ${maxScore}. We appreciate your effort in taking the test.</p>`;
+        resultDiv.innerHTML = `<h2>Welcome! 🎉</h2><p>You're a great fit for our event! We're excited to have you join us! <a href="https://www.google.com">Buy your ticket here</a>.</p>`;
     }
 }
 
