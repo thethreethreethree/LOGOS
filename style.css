@@ -138,6 +138,6 @@ button:hover {
 @media (max-width: 480px) {
     body {
         background-size: 150%; /* Shrinks the image even more on very small screens */
-        background-position: center top; /* Aligns the image to the top */
+        background-position: center center; /* Aligns the image to the top */
     }
 }
