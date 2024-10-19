@@ -90,3 +90,48 @@ const questions = [
         ],
     }
 ];
+
+let currentQuestionIndex = 0;
+let totalScore = 0;
+
+function displayQuestion(index) {
+    const questionContainer = document.getElementById('question-container');
+    const question = questions[index];
+
+    questionContainer.innerHTML = `
+        <div class="question">
+            <p>${question.question}</p>
+            ${question.options.map(option => `
+                <label>
+                    <input type="radio" name="q${index + 1}" value="${option.value}"> ${option.text}
+                </label><br>
+            `).join('')}
+        </div>
+    `;
+}
+
+// Handle form submission
+document.getElementById('quiz-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from reloading
+
+    const selectedOption = document.querySelector(`input[name="q${currentQuestionIndex + 1}"]:checked`);
+    if (selectedOption) {
+        totalScore += parseInt(selectedOption.value); // Add selected answer's score
+        currentQuestionIndex++;
+
+        // Check if there are more questions
+        if (currentQuestionIndex < questions.length) {
+            displayQuestion(currentQuestionIndex);
+        } else {
+            displayResult(totalScore); // Display the final result
+        }
+    } else {
+        alert("Please select an answer before proceeding."); // Alert if no option is selected
+    }
+});
+
+// Function to display the result based on the total score
+function displayResult(score) {
+    const resultDiv = document.getElementById('result');
+
+    const maxScore = questions.length * 3; //
