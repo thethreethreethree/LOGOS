@@ -141,3 +141,12 @@ button:hover {
         background-position: center top; /* Aligns the image to the top */
     }
 }
+/* Mobile-specific background image */
+@media (max-width: 768px) {
+    body {
+        background-image: url('images/background-mobile.png'); /* Replace with your mobile background image path */
+        background-size: cover; /* Ensure the image covers the entire mobile screen */
+        background-position: center top; /* Adjust position for better mobile fit */
+        background-attachment: scroll; /* Make the background scrollable on mobile */
+    }
+}
