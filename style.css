@@ -128,14 +128,6 @@ button:hover {
 
 
 }
-
-/* Further adjustments for smaller devices like phones */
-@media (max-width: 480px) {
-    body {
-        background-size: 150%; /* Shrinks the image even more on very small screens */
-        background-position: center top; /* Aligns the image to the top */
-    }
-}
 /* Mobile-specific background image */
 @media (max-width: 768px) {
     body {
@@ -145,3 +137,11 @@ button:hover {
         background-attachment: scroll; /* Make the background scrollable on mobile */
     }
 }
+
+/* Further adjustments for smaller devices like phones */
+@media (max-width: 480px) {
+    body {
+        background-size: 150%; /* Shrinks the image even more on very small screens */
+        background-position: center top; /* Aligns the image to the top */
+    }
+
