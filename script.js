@@ -16,7 +16,7 @@ let currentQuestionIndex = 0;
 function displayIntro() {
     const introContainer = document.getElementById('intro-container');
     introContainer.innerHTML = `
-        <p>🌟 To create a truly memorable experience for everyone, we want to ensure that participants share a similar vibe. This fun test will help us find out if you're a great fit! Ready to get started!</p>
+        <p>🌟 To create a truly memorable experience for everyone, we want to ensure that participants share a similar vibe. This fun test will help us find out if you're a great fit! Ready to get started?</p>
         <button id="start-quiz" class="start-btn">Start the Test</button>
     `;
 
