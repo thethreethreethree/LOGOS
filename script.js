@@ -1,23 +1,32 @@
 function calculateScore() {
     let score = 0;
+    const totalQuestions = 10; // Total number of questions in the quiz
 
-    // Get all the quiz form answers
+    // Get the form element
     const form = document.forms['quiz-form'];
-    const questions = 10; // Total number of questions
 
-    // Loop through each question and add the selected value to the score
-    for (let i = 1; i <= questions; i++) {
-        const answer = form[`q${i}`];
-        if (answer) {
-            for (const option of answer) {
-                if (option.checked) {
-                    score += parseInt(option.value);
-                }
+    // Loop through each question (from q1 to q10)
+    for (let i = 1; i <= totalQuestions; i++) {
+        const selectedOption = form[`q${i}`]; // Get the options for the current question
+
+        // Check if an option is selected for each question
+        let questionAnswered = false;
+        for (const option of selectedOption) {
+            if (option.checked) {
+                score += parseInt(option.value); // Add the value of the selected answer to the score
+                questionAnswered = true;
+                break; // Exit the loop once an answer is found
             }
+        }
+
+        // If a question was not answered, show an error message and stop the calculation
+        if (!questionAnswered) {
+            document.getElementById('result').innerHTML = `Please answer all questions. You missed question ${i}.`;
+            return;
         }
     }
 
-    // Display result based on score
+    // Display result based on the final score
     const resultDiv = document.getElementById('result');
     if (score >= 25) {
         resultDiv.innerHTML = "You're in! Click <a href='https://www.google.com' target='_blank'>here</a> to purchase your ticket!";
