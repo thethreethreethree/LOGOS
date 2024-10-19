@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Event Compatibility Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Come join us!</h1>
+        <div id="intro" class="message">
+            <p>🌟 To create a truly memorable experience for everyone, we want to ensure that participants share a similar vibe. This fun test will help us find out if you're a great fit! Ready to get started?</p>
+            <button id="startTestButton" class="start-button">Start Test</button>
+        </div>
+        <div id="quiz" class="quiz hidden">
+            <form id="testForm">
+                <div id="questionContainer"></div>
+                <div class="button-container">
+                    <button type="button" id="prevButton" class="hidden">Previous</button>
+                    <button type="button" id="nextButton">Next</button>
+                </div>
+            </form>
+        </div>
+        <div id="result" class="hidden">
+            <p id="resultMessage"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
