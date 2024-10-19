@@ -129,8 +129,8 @@ button:hover {
 /* Media query for mobile screens (tablets and smaller devices) */
 @media (max-width: 768px) {
     body {
-        background-size: 120%; /* Shrinks the image for better fit on mobile */
-        background-position: top center; /* Repositions the image to fit better */
+        background-size: 180%; /* Shrinks the image for better fit on mobile */
+        background-position: center center; /* Repositions the image to fit better */
     }
 }
 
