@@ -33,19 +33,26 @@ const questions = [
 
 let currentQuestionIndex = 0;
 
+function displayIntro() {
+    const introContainer = document.getElementById('intro-container');
+    introContainer.innerHTML = `
+        <p>🌟 To create a truly memorable experience for everyone, we want to ensure that participants share a similar vibe. This fun test will help us find out if you're a great fit! Ready to get started!</p>
+        <button id="start-quiz" class="start-btn">Start the Test</button>
+    `;
+
+    // Add event listener to start button
+    document.getElementById('start-quiz').addEventListener('click', function() {
+        // Hide the intro and show the first question
+        introContainer.style.display = 'none';
+        displayQuestion(currentQuestionIndex);
+    });
+}
+
 function displayQuestion(index) {
     const questionContainer = document.getElementById('question-container');
     const question = questions[index];
 
-    let introText = '';
-    
-    // Display the introduction text only for the first question
-    if (index === 0) {
-        introText = `<p>🌟 To create a truly memorable experience for everyone, we want to ensure that participants share a similar vibe. This fun test will help us find out if you're a great fit! Ready to get started!</p>`;
-    }
-
     questionContainer.innerHTML = `
-        ${introText}
         <div class="question">
             <p>${question.question}</p>
             <input type="range" id="rating" min="0" max="4" step="1" value="0">
@@ -94,5 +101,5 @@ function displayResult() {
     }
 }
 
-// Display the first question when the page loads
-displayQuestion(currentQuestionIndex);
+// Display the introduction when the page loads
+displayIntro();
