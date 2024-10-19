@@ -1,86 +1,66 @@
 const questions = [
-    { question: "When someone asks for help, I feel motivated to assist them." },
-    { question: "I enjoy meeting new people and learning about their experiences." },
-    { question: "I am open to participating in group activities and events." },
-    { question: "I try to stay positive and encourage others, even when times are tough." },
-    { question: "I believe that small acts of kindness can make a big difference." },
-    { question: "I am willing to share my thoughts and ideas with others in a friendly way." },
-    { question: "I find joy in making others smile or laugh." },
-    { question: "I value collaboration and teamwork in achieving common goals." },
-    { question: "I feel comfortable approaching someone I don’t know to start a conversation." },
-    { question: "I believe in supporting causes that help the community." }
+    "I often help others in need.",
+    "I enjoy volunteering my time.",
+    "I show empathy towards people.",
+    "I consider the feelings of others before acting.",
+    "I often give compliments.",
+    "I try to resolve conflicts peacefully.",
+    "I believe in fairness for everyone.",
+    "I listen actively when someone is talking.",
+    "I forgive others easily.",
+    "I feel joy when others succeed."
 ];
 
-let currentQuestionIndex = 0;
+let scores = [];
 
-function displayIntro() {
-    const introContainer = document.getElementById('intro-container');
-    introContainer.innerHTML = `
-        <p>🌟 To create a truly memorable experience for everyone, we want to ensure that participants share a similar vibe. This fun test will help us find out if you're a great fit! Ready to get started?</p>
-        <button id="start-quiz" class="start-btn">Start the Test</button>
-    `;
+document.addEventListener('DOMContentLoaded', () => {
+    const quiz = document.getElementById('quiz');
+    const intro = document.getElementById('intro');
+    const result = document.getElementById('result');
+    const questionsDiv = document.getElementById('questions');
+    const resultMessage = document.getElementById('resultMessage');
+    const submitButton = document.getElementById('submitButton');
+    const restartButton = document.getElementById('restartButton');
 
-    document.getElementById('start-quiz').addEventListener('click', function() {
-        introContainer.style.display = 'none';
-        displayQuestion(currentQuestionIndex);
+    // Generate questions
+    questions.forEach((question, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.innerHTML = `
+            <label>${question}</label>
+            <input type="range" min="0" max="10" value="5" class="slider" data-index="${index}">
+        `;
+        questionsDiv.appendChild(questionDiv);
     });
-}
 
-function displayQuestion(index) {
-    const questionContainer = document.getElementById('question-container');
-    const question = questions[index];
-
-    questionContainer.innerHTML = `
-        <div class="question">
-            <p>${question.question}</p>
-            <input type="range" id="rating" min="0" max="4" step="1" value="0">
-            <p>Rating: <span id="rating-value">0</span></p>
-        </div>
-    `;
-
-    const ratingInput = document.getElementById('rating');
-    const ratingValue = document.getElementById('rating-value');
-
-    ratingInput.addEventListener('input', function() {
-        ratingValue.textContent = ratingInput.value;
+    // Show quiz
+    intro.addEventListener('click', () => {
+        intro.classList.add('hidden');
+        quiz.classList.remove('hidden');
     });
-}
 
-document.getElementById('quiz-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+    // Handle form submission
+    submitButton.addEventListener('click', () => {
+        scores = [...document.querySelectorAll('.slider')].map(slider => parseInt(slider.value));
+        const kindnessScore = scores.reduce((a, b) => a + b, 0);
+        const averageScore = kindnessScore / questions.length;
 
-    currentQuestionIndex++;
+        // Result logic
+        if (averageScore >= 7) {
+            resultMessage.innerHTML = "🎉 You're warmly welcomed to join our charity event!";
+        } else {
+            resultMessage.innerHTML = "😔 Unfortunately, our event might not provide you with the best experience.";
+        }
 
-    if (currentQuestionIndex < questions.length) {
-        displayQuestion(currentQuestionIndex);
-    } else {
-        displayResult();
-    }
+        quiz.classList.add('hidden');
+        result.classList.remove('hidden');
+        restartButton.classList.remove('hidden');
+    });
+
+    // Restart the test
+    restartButton.addEventListener('click', () => {
+        scores = [];
+        questionsDiv.innerHTML = '';
+        result.classList.add('hidden');
+        intro.classList.remove('hidden');
+    });
 });
-
-function displayResult() {
-    const questionContainer = document.getElementById('question-container');
-    const resultDiv = document.getElementById('result');
-    questionContainer.innerHTML = ''; // Remove all questions after the last one is completed
-
-    const randomChoice = Math.random() > 0.5; // Simulated outcome (replace with real scoring logic)
-
-    if (randomChoice) {
-        resultDiv.innerHTML = `
-            <h2>Welcome! 🎉</h2>
-            <p>You're a great fit for our event! We're excited to have you join us!</p>
-            <button class="join-btn" id="join-btn">Join Us!</button>
-        `;
-
-        document.getElementById('join-btn').addEventListener('click', function() {
-            window.location.href = 'https://www.google.com'; // Placeholder for the real ticket purchase link
-        });
-    } else {
-        resultDiv.innerHTML = `
-            <h2>Thank you for participating! 😔</h2>
-            <p>We appreciate your effort in taking the test, but it seems like you may not be the best fit for this event. We hope you have a wonderful day!</p>
-        `;
-    }
-}
-
-displayIntro();
