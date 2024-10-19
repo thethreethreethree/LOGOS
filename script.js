@@ -27,8 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show the first question
     function showQuestion(index) {
         questionContainer.innerHTML = `
-            <label>${questions[index]}</label>
-            <input type="range" min="0" max="10" value="5" class="slider" data-index="${index}">
+            <div class="question-box">
+                <label>${questions[index]}</label>
+                <input type="range" min="0" max="10" value="5" class="slider" data-index="${index}">
+            </div>
         `;
         prevButton.classList.toggle('hidden', index === 0);
     }
