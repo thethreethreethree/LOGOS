@@ -1,166 +1,87 @@
-/* Universal CSS reset */
-* {
-    box-sizing: border-box;
+/* General styles */
+body {
     margin: 0;
     padding: 0;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background-image: url('images/background.png'); /* Path to your background image */
-    background-size: cover; /* Ensures the image covers the screen */
-    background-position: center center; /* Center the image */
-    background-attachment: fixed; /* Fix background for smoother scroll effect */
+    font-family: 'Arial', sans-serif;
+    background-image: url('images/background-desktop.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
     color: #333;
-    min-height: 100vh; /* Ensures the body is at least 100% of the viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
-
-/* Adjustments for container styling */
-.container {
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #4CAF50; /* Stylish green color */
-    font-weight: 700;
-}
-
-/* Message container styling */
-.message {
-    margin-bottom: 30px;
-    font-size: 1.2em;
-    line-height: 1.5;
-}
-
-/* Style the start button */
-.start-button {
-    padding: 12px 24px;
-    background-color: #4CAF50; /* Stylish green */
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.start-button:hover {
-    background-color: #45a049;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Hidden state */
-.hidden {
-    display: none;
-}
-
-/* Quiz container styling */
-.quiz {
-    margin-bottom: 20px;
-}
-
-/* Style for each question's box */
-.question-box {
-    background-color: #f8f9fa; /* Light background for questions */
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Slider styling */
-.slider {
-    width: 100%;
-    margin: 20px 0;
-}
-
-/* Button container styling */
-.button-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-/* General button styling */
-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    font-weight: 500;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-button:hover {
-    background-color: #45a049;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Styling the result message */
-.resultMessage {
-    font-size: 1.5em;
-    margin-top: 20px;
-    font-weight: 600;
-}
-
-/* -------------------------- */
-/* Mobile Background Adjustments */
-/* -------------------------- */
-
 
 /* Mobile-specific background image */
 @media (max-width: 768px) {
     body {
-        background-image: url('images/background-mobile.png'); /* Replace with your mobile background image path */
-        background-size: cover; /* Ensure the image covers the entire mobile screen */
-        background-position: center top; /* Adjust position for better mobile fit */
-        background-attachment: scroll; /* Make the background scrollable on mobile */
+        background-image: url('images/background-mobile.png');
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center top;
     }
 }
 
-/* Further adjustments for smaller devices like phones */
-@media (max-width: 480px) {
-    body {
-        background-size: 120%; /* Shrinks the image even more on very small screens */
-        background-position: center top; /* Aligns the image to the top */
-    }
-/* Ticket button style */
-#ticketButton {
-    margin-top: 20px; /* Space above the button */
-    padding: 12px 24px;
-    background-color: #007bff; /* Blue color */
-    color: white;
+/* Container styles */
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Header */
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #007bff;
+}
+
+/* Question styles */
+#questionContainer {
+    margin: 20px 0;
+}
+
+#questionText {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#answerRange {
+    width: 100%;
+    margin: 10px 0;
+}
+
+#answerValue {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
     border: none;
     border-radius: 25px;
-    cursor: pointer;
     font-size: 16px;
-    font-weight: 500;
+    cursor: pointer;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-#ticketButton:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+button:hover {
+    background-color: #0056b3;
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Hidden class */
+.hidden {
+    display: none;
+}
