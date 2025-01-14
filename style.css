@@ -140,7 +140,7 @@ button:hover {
 /* Further adjustments for smaller devices like phones */
 @media (max-width: 480px) {
     body {
-        background-size: 150%; /* Shrinks the image even more on very small screens */
+        background-size: 120%; /* Shrinks the image even more on very small screens */
         background-position: center top; /* Aligns the image to the top */
     }
 /* Ticket button style */
