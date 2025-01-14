@@ -14,12 +14,9 @@ const questions = [
 
 // Quiz variables
 let currentQuestionIndex = 0;
-let scores = [];
 
 // DOM elements
 const questionText = document.getElementById('questionText');
-const answerRange = document.getElementById('answerRange');
-const answerValue = document.getElementById('answerValue');
 const nextButton = document.getElementById('nextButton');
 const result = document.getElementById('result');
 const resultMessage = document.getElementById('resultMessage');
@@ -30,34 +27,20 @@ function showQuestion(index) {
     questionText.textContent = questions[index];
 }
 
-// Update answer value display
-answerRange.addEventListener('input', () => {
-    answerValue.textContent = answerRange.value;
-});
-
 // Handle "Next" button click
 nextButton.addEventListener('click', () => {
-    scores.push(parseInt(answerRange.value));
     currentQuestionIndex++;
 
     if (currentQuestionIndex < questions.length) {
         showQuestion(currentQuestionIndex);
-        answerRange.value = 5;
-        answerValue.textContent = 5;
     } else {
-        // Calculate average score
-        const averageScore = scores.reduce((a, b) => a + b, 0) / scores.length;
-
         // Show result
         document.getElementById('quiz').classList.add('hidden');
         result.classList.remove('hidden');
 
-        if (averageScore >= 7) {
-            resultMessage.innerHTML = "🎉 You're warmly welcomed to join our charity event!";
-            ticketButton.classList.remove('hidden');
-        } else {
-            resultMessage.innerHTML = "😔 Unfortunately, our event might not provide you with the best experience.";
-        }
+        // Always pass the test and show the ticket button
+        resultMessage.innerHTML = "🎉 You're warmly welcomed to join our charity event!";
+        ticketButton.classList.remove('hidden');
     }
 });
 
