@@ -5,7 +5,7 @@ body {
     font-family: 'Arial', sans-serif;
     background-image: url('images/background-desktop.png');
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-attachment: fixed;
     color: #333;
     display: flex;
@@ -26,7 +26,7 @@ body {
 
 /* Container styles */
 .container {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -52,6 +52,16 @@ header h1 {
     margin-bottom: 20px;
 }
 
+/* Slider and value display */
+#answerSlider {
+    width: 100%;
+    margin: 10px 0;
+}
+
+#answerValue {
+    font-weight: bold;
+}
+
 /* Buttons */
 button {
     padding: 10px 20px;
@@ -74,4 +84,18 @@ button:hover {
 /* Hidden class */
 .hidden {
     display: none;
+}
+
+/* Result box styles */
+#resultBox {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#resultBox p {
+    margin-bottom: 20px;
+    font-size: 18px;
 }
